@@ -1,22 +1,22 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config({ path: ".env" });
 
-const QUICKNODE_HTTP_URL = process.env.QUICKNODE_HTTP_URL;
+const BSC_RPC = process.env.BSC_RPC;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
-const POLYGONSCAN_KEY = process.env.POLYGONSCAN_KEY;
+const BSCSCAN_KEY = process.env.BSCSCAN_KEY;
 
 module.exports = {
   solidity: "0.8.9",
   networks: {
-    mumbai: {
-      url: QUICKNODE_HTTP_URL,
-      // ChainId: 80001,
+    bsctestnet: {
+      url: BSC_RPC,
+      ChainId: 97,
       accounts: [PRIVATE_KEY],
     },
   },
   etherscan: {
     apiKey: {
-      polygonMumbai: POLYGONSCAN_KEY,
+      bscTestnet: BSCSCAN_KEY,
     },
   },
 };
